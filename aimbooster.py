@@ -20,6 +20,7 @@ screenx = 670
 screeny = 340
 count = 0
 
+# hold Q if you wish to stop the execute
 while keyboard.is_pressed('q') == False:
     pic = pyautogui.screenshot(region=(screenx,screeny,600,420))
     width, height = pic.size
@@ -29,7 +30,7 @@ while keyboard.is_pressed('q') == False:
             if b == 197 and x != lastclickx and y != lastclicky:
                 click(x+screenx,y+screeny)
                 count+=1
-                print("n°" + str(count) + "\t| " + str(x) + " " + str(y))
+                print("#" + str(count).zfill(5) + "\t| x" + str(x).zfill(3) + " y" + str(y).zfill(3))
                 lastclickx=x
                 lastclicky=y
                 break
